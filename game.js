@@ -200,7 +200,7 @@ function castingSpells() {
             }
           }
           else if (i <= 2) {
-            if (playerOneX - 2 + i >= 0 && playerOneX - 2 + i < 20 && field[playerOneX - 2 + i][playerOneY + 1 - 1] != "#") {
+            if (playerOneX - 2 + i >= 0 && playerOneX - 2 + i < 20 && field[playerOneX - 2 + i][playerOneY + 1 - i] != "#") {
               let someSpell = new waterSpell(playerOneX - 2 + i, playerOneY + 1 - i, waterSpellSpeed, "up", "p");
               spells.push(someSpell);
             }
@@ -211,13 +211,13 @@ function castingSpells() {
       else if (playerOneDirection === "down") {
         for (let i = 0; i < 5; i++) {
           if (i < 2) {
-            if (playerOneX + 2 - i >= 0 && playerOneX + 2 - i < 20 && field[playerOneX + 2 - i][playerOneY - 3 + i] != "#") {
+            if (playerOneX + 2 - i >= 0 && playerOneX + 2 - i < 20 && field[playerOneX + 2 - i][playerOneY - 1 + i] != "#") {
               let someSpell = new waterSpell(playerOneX + 2 - i, playerOneY - 1 + i, waterSpellSpeed, "down", "p");
               spells.push(someSpell);
             }
           }
           else if (i >= 2) {
-            if (playerOneX + 2 - i >= 0 && playerOneX + 2 - i < 20 && field[playerOneX + 2 - i][playerOneY + 1 - 1] != "#") {
+            if (playerOneX + 2 - i >= 0 && playerOneX + 2 - i < 20 && field[playerOneX + 2 - i][playerOneY + 3 - i] != "#") {
               let someSpell = new waterSpell(playerOneX + 2 - i, playerOneY + 3 - i, waterSpellSpeed, "down", "p");
               spells.push(someSpell);
             }
@@ -304,7 +304,7 @@ function castingSpells() {
 
 
   // Player Two Spells
-  if ((key === "," || key === "." || key === "/") && millis() - cooldownTimerTwo >= 1000) {
+  if ((key === "," || key != "#" || key === "/") && millis() - cooldownTimerTwo >= 1000) {
     if (key === ",") {
       // fire spell
       if (playerTwoDirection === "up") {
@@ -353,18 +353,17 @@ function castingSpells() {
       }
     }
     else if (key === ".") {
-      // water spell
       if (playerTwoDirection === "up") {
         for (let i = 0; i < 5; i++) {
           if (i > 2) {
             if (playerTwoX - 2 + i >= 0 && playerTwoX - 2 + i < 20 && field[playerTwoX - 2 + i][playerTwoY - 3 + i] != "#") {
-              let someSpell = new waterSpell(playerTwoX - 2 + i, playerTwoY - 3 + i, waterSpellSpeed, "up", "o");
+              let someSpell = new waterSpell(playerTwoX - 2 + i, playerTwoY - 3 + i, waterSpellSpeed, "up", "p");
               spells.push(someSpell);
             }
           }
           else if (i <= 2) {
-            if (playerTwoX - 2 + i >= 0 && playerTwoX - 2 + i < 20 && field[playerTwoX - 2 + i][playerTwoY + 1 - 1] != "#") {
-              let someSpell = new waterSpell(playerTwoX - 2 + i, playerTwoY + 1 - i, waterSpellSpeed, "up", "o");
+            if (playerTwoX - 2 + i >= 0 && playerTwoX - 2 + i < 20 && field[playerTwoX - 2 + i][playerTwoY + 1 - i] != "#") {
+              let someSpell = new waterSpell(playerTwoX - 2 + i, playerTwoY + 1 - i, waterSpellSpeed, "up", "p");
               spells.push(someSpell);
             }
           }
@@ -372,18 +371,54 @@ function castingSpells() {
         cooldownTimerTwo = millis();
       }
       else if (playerTwoDirection === "down") {
-        let someSpell = new waterSpell(playerTwoX, playerTwoY + 1, waterSpellSpeed, "down", "o");
-        spells.push(someSpell);
+        for (let i = 0; i < 5; i++) {
+          if (i < 2) {
+            if (playerTwoX + 2 - i >= 0 && playerTwoX + 2 - i < 20 && field[playerTwoX + 2 - i][playerTwoY - 1 + i] != "#") {
+              let someSpell = new waterSpell(playerTwoX + 2 - i, playerTwoY - 1 + i, waterSpellSpeed, "down", "p");
+              spells.push(someSpell);
+            }
+          }
+          else if (i >= 2) {
+            if (playerTwoX + 2 - i >= 0 && playerTwoX + 2 - i < 20 && field[playerTwoX + 2 - i][playerTwoY + 3 - i] != "#") {
+              let someSpell = new waterSpell(playerTwoX + 2 - i, playerTwoY + 3 - i, waterSpellSpeed, "down", "p");
+              spells.push(someSpell);
+            }
+          }
+        }
         cooldownTimerTwo = millis();
       }
       else if (playerTwoDirection === "left") {
-        let someSpell = new waterSpell(playerTwoX - 1, playerTwoY, waterSpellSpeed, "left", "o");
-        spells.push(someSpell);
+        for (let i = 0; i < 5; i++) {
+          if (i > 2) {
+            if (playerTwoX - 3 + i >= 0 && playerTwoX - 3 + i < 20 && field[playerTwoX - 3 + i][playerTwoY - 2 + i] != "#") {
+              let someSpell = new waterSpell(playerTwoX - 3 + i, playerTwoY - 2 + i, waterSpellSpeed, "left", "p");
+              spells.push(someSpell);
+            }
+          }
+          else if (i <= 2) {
+            if (playerTwoX + 1 - i >= 0 && playerTwoX + 1 - i < 20 && field[playerTwoX + 1 - i][playerTwoY - 2 + i] != "#") {
+              let someSpell = new waterSpell(playerTwoX + 1 - i, playerTwoY - 2 + i, waterSpellSpeed, "left", "p");
+              spells.push(someSpell);
+            }
+          }
+        }
         cooldownTimerTwo = millis();
       }
       else if (playerTwoDirection === "right") {
-        let someSpell = new waterSpell(playerTwoX + 1, playerTwoY, waterSpellSpeed, "right", "o");
-        spells.push(someSpell);
+        for (let i = 0; i < 5; i++) {
+          if (i < 2) {
+            if (playerTwoX - 1 + i >= 0 && playerTwoX - 1 + i < 20 && field[playerTwoX - 1 + i][playerTwoY - 2 + i] != "#") {
+              let someSpell = new waterSpell(playerTwoX - 1 + i, playerTwoY - 2 + i, waterSpellSpeed, "right", "p");
+              spells.push(someSpell);
+            }
+          }
+          else if (i >= 2) {
+            if (playerTwoX + 3 - i >= 0 && playerTwoX + 3 - i < 20 && field[playerTwoX + 3 - i][playerTwoY - 2 + i] != "#") {
+              let someSpell = new waterSpell(playerTwoX + 3 - i, playerTwoY - 2 + i, waterSpellSpeed, "right", "p");
+              spells.push(someSpell);
+            }
+          }
+        }
         cooldownTimerTwo = millis();
       }
     }
