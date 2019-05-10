@@ -53,6 +53,7 @@ function gameSetup() {
   findPlayer();
   counter = millis();
   objects();
+  windowResized();
 }
 
 function createEmpty2dArray() {
@@ -81,27 +82,4 @@ function findPlayer() {
       }
     }
   }
-}
-
-function windowResized() {
-  // called if the user resizes the window
-  if (windowHeight > windowWidth) {
-    windowSize = windowWidth;
-  }
-  else {
-    windowSize = windowHeight;
-  }
-  createCanvas(windowSize, windowSize);
-  tileSize = windowSize / 20;
-  objects();
-}
-
-function objects() {
-  buttonObject = {
-    mainMenuButton: new button(windowSize/2, windowSize/2, windowSize / 10, "red", "PLAY")
-  };
-  healthbarObject = {
-    playerOneHealthbar: new healthbar(windowSize - playerOneMaxHealth * (windowSize / 120), 0, playerOneMaxHealth, playerOneRemainingHealth, 1),
-    playerTwoHealthbar: new healthbar(0, windowSize - (windowSize / 40), playerTwoMaxHealth, playerTwoRemainingHealth, 2),
-  };
 }

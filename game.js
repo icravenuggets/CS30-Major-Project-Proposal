@@ -194,13 +194,13 @@ function castingSpells() {
       if (playerOneDirection === "up") {
         for (let i = 0; i < 5; i++) {
           if (i > 2) {
-            if (playerOneX - 2 + i >= 0 && playerOneX - 2 + i < 20 && field[playerOneX - 2 + i][playerOneY - 3 + i] != "#") {
+            if (playerOneX - 2 + i > 0 && playerOneX - 2 + i < 19 &&  field[playerOneX - 2 + i][playerOneY - 3 + i] != "#") {
               let someSpell = new waterSpell(playerOneX - 2 + i, playerOneY - 3 + i, waterSpellSpeed, "up", "p");
               spells.push(someSpell);
             }
           }
           else if (i <= 2) {
-            if (playerOneX - 2 + i >= 0 && playerOneX - 2 + i < 20 && field[playerOneX - 2 + i][playerOneY + 1 - i] != "#") {
+            if (playerOneX - 2 + i > 0 && playerOneX - 2 + i < 19 && field[playerOneX - 2 + i][playerOneY + 1 - i] != "#") {
               let someSpell = new waterSpell(playerOneX - 2 + i, playerOneY + 1 - i, waterSpellSpeed, "up", "p");
               spells.push(someSpell);
             }
@@ -211,13 +211,13 @@ function castingSpells() {
       else if (playerOneDirection === "down") {
         for (let i = 0; i < 5; i++) {
           if (i < 2) {
-            if (playerOneX + 2 - i >= 0 && playerOneX + 2 - i < 20 && field[playerOneX + 2 - i][playerOneY - 1 + i] != "#") {
+            if (playerOneX + 2 - i > 0 && playerOneX + 2 - i < 19 && field[playerOneX + 2 - i][playerOneY - 1 + i] != "#") {
               let someSpell = new waterSpell(playerOneX + 2 - i, playerOneY - 1 + i, waterSpellSpeed, "down", "p");
               spells.push(someSpell);
             }
           }
           else if (i >= 2) {
-            if (playerOneX + 2 - i >= 0 && playerOneX + 2 - i < 20 && field[playerOneX + 2 - i][playerOneY + 3 - i] != "#") {
+            if (playerOneX + 2 - i > 0 && playerOneX + 2 - i < 19 && field[playerOneX + 2 - i][playerOneY + 3 - i] != "#") {
               let someSpell = new waterSpell(playerOneX + 2 - i, playerOneY + 3 - i, waterSpellSpeed, "down", "p");
               spells.push(someSpell);
             }
@@ -228,13 +228,13 @@ function castingSpells() {
       else if (playerOneDirection === "left") {
         for (let i = 0; i < 5; i++) {
           if (i > 2) {
-            if (playerOneX - 3 + i >= 0 && playerOneX - 3 + i < 20 && field[playerOneX - 3 + i][playerOneY - 2 + i] != "#") {
+            if (playerOneY - 2 + i > 0 && playerOneY - 2 + i < 19 && field[playerOneX - 3 + i][playerOneY - 2 + i] != "#") {
               let someSpell = new waterSpell(playerOneX - 3 + i, playerOneY - 2 + i, waterSpellSpeed, "left", "p");
               spells.push(someSpell);
             }
           }
           else if (i <= 2) {
-            if (playerOneX + 1 - i >= 0 && playerOneX + 1 - i < 20 && field[playerOneX + 1 - i][playerOneY - 2 + i] != "#") {
+            if (playerOneY - 2 + i > 0 && playerOneY - 2 + i < 19 && field[playerOneX + 1 - i][playerOneY - 2 + i] != "#") {
               let someSpell = new waterSpell(playerOneX + 1 - i, playerOneY - 2 + i, waterSpellSpeed, "left", "p");
               spells.push(someSpell);
             }
@@ -245,13 +245,13 @@ function castingSpells() {
       else if (playerOneDirection === "right") {
         for (let i = 0; i < 5; i++) {
           if (i < 2) {
-            if (playerOneX - 1 + i >= 0 && playerOneX - 1 + i < 20 && field[playerOneX - 1 + i][playerOneY - 2 + i] != "#") {
+            if (playerOneY - 2 + i > 0 && playerOneY - 2 + i < 19 && field[playerOneX - 1 + i][playerOneY - 2 + i] != "#") {
               let someSpell = new waterSpell(playerOneX - 1 + i, playerOneY - 2 + i, waterSpellSpeed, "right", "p");
               spells.push(someSpell);
             }
           }
           else if (i >= 2) {
-            if (playerOneX + 3 - i >= 0 && playerOneX + 3 - i < 20 && field[playerOneX + 3 - i][playerOneY - 2 + i] != "#") {
+            if (playerOneY - 2 + i > 0 && playerOneY - 2 + i < 19 && field[playerOneX + 3 - i][playerOneY - 2 + i] != "#") {
               let someSpell = new waterSpell(playerOneX + 3 - i, playerOneY - 2 + i, waterSpellSpeed, "right", "p");
               spells.push(someSpell);
             }
@@ -356,13 +356,13 @@ function castingSpells() {
       if (playerTwoDirection === "up") {
         for (let i = 0; i < 5; i++) {
           if (i > 2) {
-            if (playerTwoX - 2 + i >= 0 && playerTwoX - 2 + i < 20 && field[playerTwoX - 2 + i][playerTwoY - 3 + i] != "#") {
+            if (playerTwoX - 2 + i > 0 && playerTwoX - 2 + i < 19 && field[playerTwoX - 2 + i][playerTwoY - 3 + i] != "#") {
               let someSpell = new waterSpell(playerTwoX - 2 + i, playerTwoY - 3 + i, waterSpellSpeed, "up", "p");
               spells.push(someSpell);
             }
           }
           else if (i <= 2) {
-            if (playerTwoX - 2 + i >= 0 && playerTwoX - 2 + i < 20 && field[playerTwoX - 2 + i][playerTwoY + 1 - i] != "#") {
+            if (playerTwoX - 2 + i > 0 && playerTwoX - 2 + i < 19 && field[playerTwoX - 2 + i][playerTwoY + 1 - i] != "#") {
               let someSpell = new waterSpell(playerTwoX - 2 + i, playerTwoY + 1 - i, waterSpellSpeed, "up", "p");
               spells.push(someSpell);
             }
@@ -373,13 +373,13 @@ function castingSpells() {
       else if (playerTwoDirection === "down") {
         for (let i = 0; i < 5; i++) {
           if (i < 2) {
-            if (playerTwoX + 2 - i >= 0 && playerTwoX + 2 - i < 20 && field[playerTwoX + 2 - i][playerTwoY - 1 + i] != "#") {
+            if (playerTwoX + 2 - i > 0 && playerTwoX + 2 - i < 19 && field[playerTwoX + 2 - i][playerTwoY - 1 + i] != "#") {
               let someSpell = new waterSpell(playerTwoX + 2 - i, playerTwoY - 1 + i, waterSpellSpeed, "down", "p");
               spells.push(someSpell);
             }
           }
           else if (i >= 2) {
-            if (playerTwoX + 2 - i >= 0 && playerTwoX + 2 - i < 20 && field[playerTwoX + 2 - i][playerTwoY + 3 - i] != "#") {
+            if (playerTwoX + 2 - i > 0 && playerTwoX + 2 - i < 19 && field[playerTwoX + 2 - i][playerTwoY + 3 - i] != "#") {
               let someSpell = new waterSpell(playerTwoX + 2 - i, playerTwoY + 3 - i, waterSpellSpeed, "down", "p");
               spells.push(someSpell);
             }
@@ -390,13 +390,13 @@ function castingSpells() {
       else if (playerTwoDirection === "left") {
         for (let i = 0; i < 5; i++) {
           if (i > 2) {
-            if (playerTwoX - 3 + i >= 0 && playerTwoX - 3 + i < 20 && field[playerTwoX - 3 + i][playerTwoY - 2 + i] != "#") {
+            if (playerTwoY - 2 + i > 0 && playerTwoY - 2 + i < 19 && field[playerTwoX - 3 + i][playerTwoY - 2 + i] != "#") {
               let someSpell = new waterSpell(playerTwoX - 3 + i, playerTwoY - 2 + i, waterSpellSpeed, "left", "p");
               spells.push(someSpell);
             }
           }
           else if (i <= 2) {
-            if (playerTwoX + 1 - i >= 0 && playerTwoX + 1 - i < 20 && field[playerTwoX + 1 - i][playerTwoY - 2 + i] != "#") {
+            if (playerTwoY - 2 + i > 0 && playerTwoY - 2 + i < 19 && field[playerTwoX + 1 - i][playerTwoY - 2 + i] != "#") {
               let someSpell = new waterSpell(playerTwoX + 1 - i, playerTwoY - 2 + i, waterSpellSpeed, "left", "p");
               spells.push(someSpell);
             }
@@ -407,13 +407,13 @@ function castingSpells() {
       else if (playerTwoDirection === "right") {
         for (let i = 0; i < 5; i++) {
           if (i < 2) {
-            if (playerTwoX - 1 + i >= 0 && playerTwoX - 1 + i < 20 && field[playerTwoX - 1 + i][playerTwoY - 2 + i] != "#") {
+            if (playerTwoY - 2 + i > 0 && playerTwoY - 2 + i < 19 && field[playerTwoX - 1 + i][playerTwoY - 2 + i] != "#") {
               let someSpell = new waterSpell(playerTwoX - 1 + i, playerTwoY - 2 + i, waterSpellSpeed, "right", "p");
               spells.push(someSpell);
             }
           }
           else if (i >= 2) {
-            if (playerTwoX + 3 - i >= 0 && playerTwoX + 3 - i < 20 && field[playerTwoX + 3 - i][playerTwoY - 2 + i] != "#") {
+            if (playerTwoY - 2 + i > 0 && playerTwoY - 2 + i < 19 && field[playerTwoX + 3 - i][playerTwoY - 2 + i] != "#") {
               let someSpell = new waterSpell(playerTwoX + 3 - i, playerTwoY - 2 + i, waterSpellSpeed, "right", "p");
               spells.push(someSpell);
             }
