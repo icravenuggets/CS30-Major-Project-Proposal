@@ -479,8 +479,6 @@ function countingTime() {
   // a function that counts time
   if (millis() - counter >= 1000) {
     counter = millis();
-    playerOneRemainingHealth -= 1;
-    playerTwoRemainingHealth -= 1;
   }
 }
 
@@ -488,4 +486,17 @@ function countingTime() {
 function healthStuff() {
   healthbarObject.playerOneHealthbar.display(playerOneRemainingHealth);
   healthbarObject.playerTwoHealthbar.display(playerTwoRemainingHealth);
+  if (playerOneRemainingHealth <= 0) {
+    gameOver(2);
+  }
+  else if (playerTwoRemainingHealth <= 0) {
+    gameOver(1);
+  }
+}
+
+
+
+function gameOver(winner) {
+  gameWinner = winner;
+  gameState = "results";
 }

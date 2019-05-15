@@ -7,7 +7,7 @@ let field = [];
 let spells = [];
 let buttons = [];
 let buttonObject, healthbarObject;
-let playerOneMaxHealth, playerTwoMaxHealth, playerOneRemainingHealth, playerTwoRemainingHealth;
+let playerOneMaxHealth, playerTwoMaxHealth, playerOneRemainingHealth, playerTwoRemainingHealth, gameWinner;
 
 
 

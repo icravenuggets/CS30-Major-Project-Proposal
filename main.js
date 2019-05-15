@@ -16,6 +16,9 @@ function pickingGameState() {
     showPlayer(playerOneX, playerOneY, playerTwoX, playerTwoY);
     healthStuff();
   }
+  else if (gameState === "results") {
+    results();
+  }
 }
 
 
@@ -45,6 +48,9 @@ function keyTyped() {
   else if (gameState === "game") {
     playerMovement();
     castingSpells();
+  }
+  else if (gameState === "results") {
+    setup();
   }
 }
 

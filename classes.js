@@ -25,7 +25,7 @@ class fireSpell {
     if (millis() - this.counter >= this.speed && this.exists) {
       if (this.direction === "up") {
         field[this.x][this.y] = ".";
-        if (field[this.x][this.y - 1] != "#") {
+        if (field[this.x][this.y - 1] != "#" && field[this.x][this.y - 1] != "p" && field[this.x][this.y - 1] != "o") {
           this.y -= 1;
         }
         else {
