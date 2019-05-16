@@ -6,7 +6,6 @@ function mainMenu() {
   textSize(width/10);
   text("Press a number 1 to 5", width/2, height - height/3);
   buttonObject.mainMenuButton.display();
-  console.log("tes")
 }
   
 

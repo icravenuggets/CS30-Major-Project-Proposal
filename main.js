@@ -51,6 +51,8 @@ function keyTyped() {
   }
   else if (gameState === "results") {
     setup();
+    gameSetup();
+    windowResized();
   }
 }
 

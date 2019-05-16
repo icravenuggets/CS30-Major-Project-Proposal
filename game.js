@@ -470,6 +470,7 @@ function spellStuff() {
   for (let i = 0; i < spells.length; i++) {
     spells[i].implant();
     spells[i].move();
+    spells[i].checkForCollision();
   }
 }
 
