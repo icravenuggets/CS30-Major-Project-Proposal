@@ -50,9 +50,9 @@ function keyTyped() {
     castingSpells();
   }
   else if (gameState === "results") {
+    preload();
     setup();
     gameSetup();
-    windowResized();
   }
 }
 
