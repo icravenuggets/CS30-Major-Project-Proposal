@@ -19,9 +19,6 @@ class fireSpell {
     if (this.exists) {
       field[this.x][this.y] = "f";
     }
-    else {
-      field
-    }
   }
 
   move() {
@@ -71,16 +68,18 @@ class fireSpell {
   }
 
   checkForCollision() {
-    if (this.owner === "p") {
-      if (this.x === playerTwoX && this.y === playerTwoY) {
-        playerTwoRemainingHealth -= 5;
-        this.exists = false;
+    if (this.exists) {
+      if (this.owner === "p") {
+        if (this.x === playerTwoX && this.y === playerTwoY) {
+          playerTwoRemainingHealth -= 5;
+          this.exists = false;
+        }
       }
-    }
-    else if (this.owner === "o") {
-      if (this.x === playerOneX && this.y === playerOneY) {
-        playerOneRemainingHealth -= 5;
-        this.exists = false;
+      else if (this.owner === "o") {
+        if (this.x === playerOneX && this.y === playerOneY) {
+          playerOneRemainingHealth -= 5;
+          this.exists = false;
+        }
       }
     }
   }
@@ -152,6 +151,23 @@ class waterSpell {
       this.counter = millis();
     }
   }
+
+  checkForCollision() {
+    if (this.exists) {
+      if (this.owner === "p") {
+        if (this.x === playerTwoX && this.y === playerTwoY) {
+          playerTwoRemainingHealth -= 5;
+          this.exists = false;
+        }
+      }
+      else if (this.owner === "o") {
+        if (this.x === playerOneX && this.y === playerOneY) {
+          playerOneRemainingHealth -= 5;
+          this.exists = false;
+        }
+      }
+    }
+  }
 }
 
 
@@ -220,6 +236,23 @@ class grassSpell {
         }
       }
       this.counter = millis();
+    }
+  }
+
+  checkForCollision() {
+    if (this.exists) {
+      if (this.owner === "p") {
+        if (this.x === playerTwoX && this.y === playerTwoY) {
+          playerTwoRemainingHealth -= 5;
+          this.exists = false;
+        }
+      }
+      else if (this.owner === "o") {
+        if (this.x === playerOneX && this.y === playerOneY) {
+          playerOneRemainingHealth -= 5;
+          this.exists = false;
+        }
+      }
     }
   }
 }

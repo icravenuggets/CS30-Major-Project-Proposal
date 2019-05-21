@@ -106,7 +106,7 @@ function playerMovement() {
     if (field[playerTwoX][playerTwoY - 1] != "#") {
       field[playerTwoX][playerTwoY] = ".";
       playerTwoY -= 1;
-      field[playerTwoX][playerTwoY] = "p"
+      field[playerTwoX][playerTwoY] = "o"
     }
   }
   else if (key === "k") {
@@ -114,7 +114,7 @@ function playerMovement() {
     if (field[playerTwoX][playerTwoY + 1] != "#") {
       field[playerTwoX][playerTwoY] = ".";
       playerTwoY += 1;
-      field[playerTwoX][playerTwoY] = "p"
+      field[playerTwoX][playerTwoY] = "o"
     }
   }
   else if (key === "j") {
@@ -122,7 +122,7 @@ function playerMovement() {
     if (field[playerTwoX - 1][playerTwoY] != "#") {
       field[playerTwoX][playerTwoY] = ".";
       playerTwoX -= 1;
-      field[playerTwoX][playerTwoY] = "p"
+      field[playerTwoX][playerTwoY] = "o"
     }
   }
   else if (key === "l") {
@@ -130,7 +130,7 @@ function playerMovement() {
     if (field[playerTwoX + 1][playerTwoY] != "#") {
       field[playerTwoX][playerTwoY] = ".";
       playerTwoX += 1;
-      field[playerTwoX][playerTwoY] = "p"
+      field[playerTwoX][playerTwoY] = "o"
     }
   }
 }
