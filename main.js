@@ -50,9 +50,7 @@ function keyTyped() {
     castingSpells();
   }
   else if (gameState === "results") {
-    preload();
     setup();
-    gameSetup();
   }
 }
 
@@ -83,7 +81,7 @@ function objects() {
     mainMenuButton: new button(windowSize/2, windowSize/2, windowSize / 10, "red", "PLAY")
   };
   healthbarObject = {
-    playerOneHealthbar: new healthbar(windowSize - playerOneMaxHealth * (windowSize / 120), 0, playerOneMaxHealth, playerOneRemainingHealth, 1),
-    playerTwoHealthbar: new healthbar(0, windowSize - (windowSize / 40), playerTwoMaxHealth, playerTwoRemainingHealth, 2),
+    playerTwoHealthbar: new healthbar(windowSize - playerTwoMaxHealth * (windowSize / 120), 0, playerTwoMaxHealth, playerTwoRemainingHealth, 1),
+    playerOneHealthbar: new healthbar(0, windowSize - (windowSize / 40), playerOneMaxHealth, playerOneRemainingHealth, 2),
   };
 }

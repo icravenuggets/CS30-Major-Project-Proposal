@@ -3,9 +3,7 @@ let lines, amountOfTiles,  tileSize, playerOneDirection, playerOneX, playerOneY,
 let counter, fireSpellSpeed, waterSpellSpeed, grassSpellSpeed, mapState, windowSize, health;
 let cooldownTimerOne = 0;
 let cooldownTimerTwo = 0;
-let field = [];
-let spells = [];
-let buttons = [];
+let field, spells, buttons;
 let buttonObject, healthbarObject;
 let playerOneMaxHealth, playerTwoMaxHealth, playerOneRemainingHealth, playerTwoRemainingHealth, gameWinner;
 
@@ -29,6 +27,9 @@ function setup() {
   gameState = "mainMenu";
   textAlign(CENTER, CENTER);
   windowResized();
+  field = [];
+  spells = [];
+  buttons = [];
 }
 
 function gameSetup() {

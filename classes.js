@@ -308,10 +308,10 @@ class healthbar {
     textSize(windowSize / 40);
     textAlign(LEFT, TOP);
     if (this.owner === 1) {
-      text("Player One: " + this.remainingHealth, windowSize - playerOneMaxHealth * (windowSize / 120), 0);
+      text("Player Two: " + this.remainingHealth, windowSize - playerOneMaxHealth * (windowSize / 120), 0);
     }
     else  if (this.owner === 2) {
-      text("Player Two: " + this.remainingHealth, 0, windowSize - (windowSize / 40));
+      text("Player One: " + this.remainingHealth, 0, windowSize - (windowSize / 40));
     }
   }
 }
