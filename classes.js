@@ -19,51 +19,50 @@ class fireSpell {
     if (this.exists) {
       field[this.x][this.y] = "f";
     }
+    // else field[this.x][this.y] = ".";
   }
 
   move() {
-    if (millis() - this.counter >= this.speed && this.exists) {
-      if (this.direction === "up") {
-        field[this.x][this.y] = ".";
-        if (field[this.x][this.y - 1] != "#") {
-          this.y -= 1;
-        }
-        else {
-          this.exists = false;
+    if (this.exists) {
+      if (millis() - this.counter >= this.speed && this.exists) {
+        if (this.direction === "up") {
           field[this.x][this.y] = ".";
+          if (field[this.x][this.y - 1] != "#") {
+            this.y -= 1;
+          }
+          else {
+            this.exists = false;
+          }
         }
-      }
-      else if (this.direction === "down") {
-        field[this.x][this.y] = ".";
-        if (field[this.x][this.y + 1] != "#") {
-          this.y += 1;
-        }
-        else {
-          this.exists = false;
+        else if (this.direction === "down") {
           field[this.x][this.y] = ".";
+          if (field[this.x][this.y + 1] != "#") {
+            this.y += 1;
+          }
+          else {
+            this.exists = false;
+          }
         }
-      }
-      else if (this.direction === "right") {
-        field[this.x][this.y] = ".";
-        if (field[this.x + 1][this.y] != "#") {
-          this.x += 1;
-        }
-        else {
-          this.exists = false;
+        else if (this.direction === "right") {
           field[this.x][this.y] = ".";
+          if (field[this.x + 1][this.y] != "#") {
+            this.x += 1;
+          }
+          else {
+            this.exists = false;
+          }
         }
-      }
-      else if (this.direction === "left") {
-        field[this.x][this.y] = ".";
-        if (field[this.x - 1][this.y] != "#") {
-          this.x -= 1;
-        }
-        else {
-          this.exists = false;
+        else if (this.direction === "left") {
           field[this.x][this.y] = ".";
+          if (field[this.x - 1][this.y] != "#") {
+            this.x -= 1;
+          }
+          else {
+            this.exists = false;
+          }
         }
+        this.counter = millis();
       }
-      this.counter = millis();
     }
   }
 
@@ -73,6 +72,10 @@ class fireSpell {
         if (this.x === playerTwoX && this.y === playerTwoY) {
           playerTwoRemainingHealth -= 5;
           this.exists = false;
+        }
+        else if (field[this.x][this.y] === "w") {
+          this.exists = false;
+          field[this.x][this.y] = ".";
         }
       }
       else if (this.owner === "o") {

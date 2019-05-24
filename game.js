@@ -468,9 +468,9 @@ function castingSpells() {
 function spellStuff() {
   // continuously goes through the spell array and calls the spell functions so they can keep working
   for (let i = 0; i < spells.length; i++) {
-    spells[i].implant();
     spells[i].move();
     spells[i].checkForCollision();
+    spells[i].implant();
   }
 }
 
