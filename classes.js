@@ -19,7 +19,6 @@ class fireSpell {
     if (this.exists) {
       field[this.x][this.y] = "f";
     }
-    // else field[this.x][this.y] = ".";
   }
 
   move() {
@@ -75,13 +74,17 @@ class fireSpell {
         }
         else if (field[this.x][this.y] === "w") {
           this.exists = false;
-          field[this.x][this.y] = ".";
+          field[this.x][this.y] = "w";
         }
       }
       else if (this.owner === "o") {
         if (this.x === playerOneX && this.y === playerOneY) {
           playerOneRemainingHealth -= 5;
           this.exists = false;
+        }
+        else if (field[this.x][this.y] === "w") {
+          this.exists = false;
+          field[this.x][this.y] = "w";
         }
       }
     }
@@ -162,18 +165,24 @@ class waterSpell {
           playerTwoRemainingHealth -= 5;
           this.exists = false;
         }
+        else if (field[this.x][this.y] === "g") {
+          this.exists = false;
+          field[this.x][this.y] = "g";
+        }
       }
       else if (this.owner === "o") {
         if (this.x === playerOneX && this.y === playerOneY) {
           playerOneRemainingHealth -= 5;
           this.exists = false;
         }
+        else if (field[this.x][this.y] === "g") {
+          this.exists = false;
+          field[this.x][this.y] = "g";
+        }
       }
     }
   }
 }
-
-
 
 
 
@@ -249,11 +258,19 @@ class grassSpell {
           playerTwoRemainingHealth -= 5;
           this.exists = false;
         }
+        else if (field[this.x][this.y] === "f") {
+          this.exists = false;
+          field[this.x][this.y] = "f";
+        }
       }
       else if (this.owner === "o") {
         if (this.x === playerOneX && this.y === playerOneY) {
           playerOneRemainingHealth -= 5;
           this.exists = false;
+        }
+        else if (field[this.x][this.y] === "f") {
+          this.exists = false;
+          field[this.x][this.y] = "f";
         }
       }
     }

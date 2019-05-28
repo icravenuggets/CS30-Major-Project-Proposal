@@ -40,9 +40,9 @@ function gameSetup() {
   playerOneRemainingHealth = playerOneMaxHealth;
   playerTwoMaxHealth = 50;
   playerTwoRemainingHealth = playerTwoMaxHealth;
-  fireSpellSpeed = 1000;     //100
-  waterSpellSpeed = 1000;    //150
-  grassSpellSpeed = 1000;     //50
+  fireSpellSpeed = 100;     //100
+  waterSpellSpeed = 150;    //150
+  grassSpellSpeed = 50;     //50
   amountOfTiles = lines.length;
   field = createEmpty2dArray();
   for (let y = 0; y < amountOfTiles; y++) {
