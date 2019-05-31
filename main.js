@@ -7,7 +7,17 @@ function draw() {
 function pickingGameState() {
   // determines what draw functions should be called based on what the game state is
   if (gameState === "mainMenu") {
-    mainMenu();
+
+  }
+  else if (gameState === "optionsMenu") {
+
+  }
+
+  else if (gameState === "pauseMenu") {
+    
+  }
+  else if (gameState === "mapSelect") {
+    mapSelect();
   }
   else if (gameState === "game") {
     assignTiles();
@@ -24,7 +34,7 @@ function pickingGameState() {
 
 function keyTyped() {
   // called if a key on the keyboard is pressed
-  if (gameState === "mainMenu") {
+  if (gameState === "mapSelect") {
     if (key === "1" || key === "2" || key === "3" || key === "4" || key === "5") {
       if (key === "1") {
         lines = levelOne;

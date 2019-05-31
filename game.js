@@ -10,13 +10,14 @@ function assignTiles() {
 function showTiles(x, y) {
   // displays an image based on what the given spot is in an array (for ex. grey square if the spot
   // in the array contains a ".", which is the background)
-  if (field[x][y] === ".") {
-    fill(122, 122, 122);
-    rect(x * tileSize, y * tileSize, tileSize, tileSize);
+  if (field[x][y] === "." || field[x][y] === "p" || field[x][y] === "o") {
+    // fill(122, 122, 122);
+    // rect(x * tileSize, y * tileSize, tileSize, tileSize);
+    image(floor, x * tileSize, y * tileSize, tileSize, tileSize);
   }
   else if (field[x][y] === "#") {
     fill(50, 40, 40);
-    rect(x * tileSize, y * tileSize, tileSize, tileSize);
+    image(wall, x * tileSize, y * tileSize, tileSize, tileSize);
   }
   else if (field[x][y] === "f") {
     fill(255, 0, 0);
@@ -36,29 +37,29 @@ function showTiles(x, y) {
 function showPlayer(x, y, i, j) {
   // Depending on the state variable playerDirection, this displays the appropriate image of the player
   if (playerOneDirection === "up") {
-    image(playerUp, x * tileSize, y * tileSize, tileSize, tileSize)
+    image(playerOneUp, x * tileSize, y * tileSize, tileSize, tileSize)
   }
   else if (playerOneDirection === "down") {
-    image(playerDown, x * tileSize, y * tileSize, tileSize, tileSize)
+    image(playerOneDown, x * tileSize, y * tileSize, tileSize, tileSize)
   }
   else if (playerOneDirection === "right") {
-    image(playerRight, x * tileSize, y * tileSize, tileSize, tileSize)
+    image(playerOneRight, x * tileSize, y * tileSize, tileSize, tileSize)
   }
   else if (playerOneDirection === "left") {
-    image(playerLeft, x * tileSize, y * tileSize, tileSize, tileSize)
+    image(playerOneLeft, x * tileSize, y * tileSize, tileSize, tileSize)
   }
   // Player Two
   if (playerTwoDirection === "up") {
-    image(playerUp, i * tileSize, j * tileSize, tileSize, tileSize)
+    image(playerTwoUp, i * tileSize, j * tileSize, tileSize, tileSize)
   }
   else if (playerTwoDirection === "down") {
-    image(playerDown, i * tileSize, j * tileSize, tileSize, tileSize)
+    image(playerTwoDown, i * tileSize, j * tileSize, tileSize, tileSize)
   }
   else if (playerTwoDirection === "right") {
-    image(playerRight, i * tileSize, j * tileSize, tileSize, tileSize)
+    image(playerTwoRight, i * tileSize, j * tileSize, tileSize, tileSize)
   }
   else if (playerTwoDirection === "left") {
-    image(playerLeft, i * tileSize, j * tileSize, tileSize, tileSize)
+    image(playerTwoLeft, i * tileSize, j * tileSize, tileSize, tileSize)
   }
 }
 

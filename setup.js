@@ -16,10 +16,16 @@ function preload() {
   levelThree = loadStrings("assets/levels/levelThree.txt");
   levelFour = loadStrings("assets/levels/levelFour.txt");
   levelFive = loadStrings("assets/levels/levelFive.txt");
-  playerUp = loadImage("assets/playerUp.png");
-  playerDown = loadImage("assets/playerDown.png");
-  playerRight = loadImage("assets/playerRight.png");
-  playerLeft = loadImage("assets/playerLeft.png");
+  playerOneUp = loadImage("assets/playerOneUp.png");
+  playerOneDown = loadImage("assets/playerOneDown.png");
+  playerOneRight = loadImage("assets/playerOneRight.png");
+  playerOneLeft = loadImage("assets/playerOneLeft.png");
+  playerTwoUp = loadImage("assets/playerTwoUp.png");
+  playerTwoDown = loadImage("assets/playerTwoDown.png");
+  playerTwoRight = loadImage("assets/playerTwoRight.png");
+  playerTwoLeft = loadImage("assets/playerTwoLeft.png");
+  wall = loadImage("assets/wall.png");
+  floor = loadImage("assets/floor.png");
 }
 
 function setup() {

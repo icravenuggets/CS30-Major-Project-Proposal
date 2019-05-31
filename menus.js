@@ -1,4 +1,4 @@
-function mainMenu() {
+function mapSelect() {
   // The main menu that shows up when you first start the page
   fill(0);
   textSize(width/7);
