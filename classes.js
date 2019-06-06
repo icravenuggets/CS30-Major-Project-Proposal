@@ -299,6 +299,10 @@ class button {
     fill(0);
     text(this.text, this.textX, this.textY);
   }
+
+  clicked(menuToSwitchTo) {
+    gameState = menuToSwitchTo;
+  }
 }
 
 

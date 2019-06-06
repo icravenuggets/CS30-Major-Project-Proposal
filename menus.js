@@ -1,13 +1,18 @@
 function mapSelect() {
   // The main menu that shows up when you first start the page
   fill(0);
-  textSize(width/7);
-  text("Wizard Game", width/2, height/2);
   textSize(width/10);
-  text("Press a number 1 to 5", width/2, height - height/3);
-  buttonObject.mainMenuButton.display();
+  text("Press a number 1 to 5", width/2, height / 3);
 }
   
+
+function mainMenu() {
+  buttonObject.mainMenuButton.display();
+  fill(0);
+  textSize(width/7);
+  text("Wizard Game", width/2, height/4);
+}
+
 
 function optionsMenu() {
 
@@ -29,5 +34,5 @@ function results() {
     textSize(windowSize/30);
     text("Player 2 Wins!", width/2, height/2);
   }
-  text("Press any button to continue", width/2, height/3);
+  text("Press the Enter key to continue", width/2, height/3);
 }

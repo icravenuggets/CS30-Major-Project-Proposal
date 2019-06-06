@@ -7,14 +7,13 @@ function draw() {
 function pickingGameState() {
   // determines what draw functions should be called based on what the game state is
   if (gameState === "mainMenu") {
-
+    mainMenu();
   }
   else if (gameState === "optionsMenu") {
-
+    optionsMenu();
   }
-
   else if (gameState === "pauseMenu") {
-    
+    pauseMenu();
   }
   else if (gameState === "mapSelect") {
     mapSelect();
@@ -60,7 +59,9 @@ function keyTyped() {
     castingSpells();
   }
   else if (gameState === "results") {
-    setup();
+    if (keyCode === ENTER) {
+      setup();
+    }
   }
 }
 
@@ -68,7 +69,9 @@ function keyTyped() {
 
 function mousePressed() {
   // If the mouse is pressed at any point
-  // Nothing yet here
+  if (gameState === "mainMenu") {
+    // if mouseX > 
+  }
 }
 
 

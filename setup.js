@@ -30,7 +30,7 @@ function preload() {
 
 function setup() {
   // setup functions such as setting default variables and calling one-time functions
-  gameState = "mainMenu";
+  gameState = "mapSelect";
   textAlign(CENTER, CENTER);
   windowResized();
   field = [];
