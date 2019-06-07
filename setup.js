@@ -5,7 +5,7 @@ let cooldownTimerOne = 0;
 let cooldownTimerTwo = 0;
 let field, spells, buttons;
 let buttonObject, healthbarObject;
-let playerOneMaxHealth, playerTwoMaxHealth, playerOneRemainingHealth, playerTwoRemainingHealth, gameWinner;
+let playerOneMaxHealth, playerTwoMaxHealth, playerOneRemainingHealth, playerTwoRemainingHealth, gameWinner, tempTimerOne;
 
 
 
@@ -30,7 +30,7 @@ function preload() {
 
 function setup() {
   // setup functions such as setting default variables and calling one-time functions
-  gameState = "mapSelect";
+  gameState = "mainMenu";
   textAlign(CENTER, CENTER);
   windowResized();
   field = [];

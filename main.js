@@ -57,10 +57,25 @@ function keyTyped() {
   else if (gameState === "game") {
     playerMovement();
     castingSpells();
+    if (key === "p") {
+      gameState = "pauseMenu";
+    }
   }
   else if (gameState === "results") {
     if (keyCode === ENTER) {
       setup();
+    }
+  }
+  else if (gameState === "mainMenu") {
+    if (keyCode === ENTER) {
+      gameState = "mapSelect";
+    }
+  }
+  else if (gameState === "pauseMenu") {
+    if (key === "p") {
+      gameState = "game";
+      cooldownTimerOne = millis();
+      cooldownTimerTwo = millis();
     }
   }
 }
@@ -70,7 +85,7 @@ function keyTyped() {
 function mousePressed() {
   // If the mouse is pressed at any point
   if (gameState === "mainMenu") {
-    // if mouseX > 
+  //   if (mouseX > )
   }
 }
 
@@ -90,9 +105,9 @@ function windowResized() {
 }
 
 function objects() {
-  buttonObject = {
-    mainMenuButton: new button(windowSize/2, windowSize/2, windowSize / 10, "red", "PLAY")
-  };
+  // buttonObject = {
+  //   mainMenuButton: new button(windowSize/2, windowSize/2, windowSize / 10, "red", "PLAY")
+  // };
   healthbarObject = {
     playerTwoHealthbar: new healthbar(windowSize - playerTwoMaxHealth * (windowSize / 120), 0, playerTwoMaxHealth, playerTwoRemainingHealth, 1),
     playerOneHealthbar: new healthbar(0, windowSize - (windowSize / 40), playerOneMaxHealth, playerOneRemainingHealth, 2),

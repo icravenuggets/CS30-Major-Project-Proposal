@@ -1,26 +1,28 @@
 function mapSelect() {
   // The main menu that shows up when you first start the page
+  background(255);
   fill(0);
-  textSize(width/10);
-  text("Press a number 1 to 5", width/2, height / 3);
+  textSize(windowSize / 20);
+  text("Press a number 1 to 5 to pick a map", windowSize / 2, windowSize / 3);
 }
   
 
 function mainMenu() {
-  buttonObject.mainMenuButton.display();
   fill(0);
-  textSize(width/7);
-  text("Wizard Game", width/2, height/4);
-}
-
-
-function optionsMenu() {
-
+  textSize(windowSize/7);
+  text("Wizard Game", windowSize / 2, windowSize / 4);
+  textSize(windowSize/30);
+  text("Press p in game to pause and read the instructions", windowSize / 2, windowSize - windowSize / 4);
+  text("Press the ENTER key to continue", windowSize / 2, windowSize / 2);
 }
 
 
 function pauseMenu() {
-  
+  background(255);
+  fill(0);
+  textSize(windowSize/30);
+  textAlign(CENTER, CENTER);
+  text("The game is paused, press p to unpause", windowSize/2, windowSize/2);
 }
 
 function results() {
