@@ -20,9 +20,14 @@ function mainMenu() {
 function pauseMenu() {
   background(255);
   fill(0);
-  textSize(windowSize/30);
+  textSize(windowSize/20);
   textAlign(CENTER, CENTER);
   text("The game is paused, press p to unpause", windowSize/2, windowSize/2);
+  textSize(windowSize/30);
+  text("Player 1 use WASD to move, use XCV keys to cast spells", windowSize / 2, windowSize / 6);
+  text("Player 2 use IJKL to move, use ,./ keys to cast spells", windowSize / 2, windowSize / 4);
+  text("Hit your opponent with spells for them to lose health", windowSize / 2, windowSize - windowSize / 4);
+  text("Whoever loses all their health loses the game", windowSize / 2, windowSize - windowSize / 5);
 }
 
 function results() {

@@ -3,7 +3,7 @@
 
 -$ Grid based (2D array)
 
-- 3 Different types of spells (rock, paper, scissors style) that look and act different (water beats fire beats grass beats water)
+-$ 3 Different types of spells (rock, paper, scissors style) that look and act different (water beats fire beats grass beats water)
 
 -$ Player vs player mode
 
@@ -20,7 +20,7 @@
 
 - Nice looking cursor, start screen, and menus
 
-- Pause Menu
+-$ Pause Menu
 
 - Options menu
 
@@ -31,3 +31,12 @@
 - Upgrade system using currency
 
 - Player vs CPU modes
+
+
+## Stuff to Do
+
+- Visuals
+
+- Sound
+
+- Comments
