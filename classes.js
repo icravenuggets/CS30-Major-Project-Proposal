@@ -2,8 +2,8 @@
 // to take these much further than they currently are at in terms of behavioural differences
 
 
-class fireSpell {
-  // Firespell beats grass but disappears if it collides with a water spell
+class FireSpell {
+  // FireSpell beats grass but disappears if it collides with a water spell
   constructor(startingX, startingY, speed, direction, owner) {
     this.x = startingX;
     this.y = startingY;
@@ -16,12 +16,14 @@ class fireSpell {
   }
 
   implant() {
+    // ensures that the spell's x and y coordinates on the grid are displayed by the spell type
     if (this.exists) {
       field[this.x][this.y] = "f";
     }
   }
 
   move() {
+    // moves the spell every interval of time
     if (this.exists) {
       if (millis() - this.counter >= this.speed && this.exists) {
         if (this.direction === "up") {
@@ -66,10 +68,13 @@ class fireSpell {
   }
 
   checkForCollision() {
+    // checks for collision with players or other spells
     if (this.exists) {
       if (this.owner === "p") {
         if (this.x === playerTwoX && this.y === playerTwoY) {
           playerTwoRemainingHealth -= 5;
+          hitSound.setVolume(0.1);
+          hitSound.play();
           this.exists = false;
         }
         else if (field[this.x][this.y] === "w") {
@@ -80,6 +85,8 @@ class fireSpell {
       else if (this.owner === "o") {
         if (this.x === playerOneX && this.y === playerOneY) {
           playerOneRemainingHealth -= 5;
+          hitSound.setVolume(0.1);
+          hitSound.play();
           this.exists = false;
         }
         else if (field[this.x][this.y] === "w") {
@@ -93,7 +100,7 @@ class fireSpell {
 
 
 
-class waterSpell {
+class WaterSpell {
   // beats fire but loses to grass
   constructor(startingX, startingY, speed, direction, owner) {
     this.x = startingX;
@@ -107,12 +114,14 @@ class waterSpell {
   }
 
   implant() {
+    // ensures that the spell's x and y coordinates on the grid are displayed by the spell type
     if (this.exists) {
       field[this.x][this.y] = "w";
     }
   }
 
   move() {
+    // moves the spell
     if (millis() - this.counter >= this.speed && this.exists) {
       if (this.direction === "up") {
         field[this.x][this.y] = ".";
@@ -159,10 +168,13 @@ class waterSpell {
   }
 
   checkForCollision() {
+    // checks for player or spell collision
     if (this.exists) {
       if (this.owner === "p") {
         if (this.x === playerTwoX && this.y === playerTwoY) {
           playerTwoRemainingHealth -= 5;
+          hitSound.setVolume(0.1);
+          hitSound.play();
           this.exists = false;
         }
         else if (field[this.x][this.y] === "g") {
@@ -173,6 +185,8 @@ class waterSpell {
       else if (this.owner === "o") {
         if (this.x === playerOneX && this.y === playerOneY) {
           playerOneRemainingHealth -= 5;
+          hitSound.setVolume(0.1);
+          hitSound.play();
           this.exists = false;
         }
         else if (field[this.x][this.y] === "g") {
@@ -186,7 +200,7 @@ class waterSpell {
 
 
 
-class grassSpell {
+class GrassSpell {
   // beats water, loses to fire
   constructor(startingX, startingY, speed, direction, owner) {
     this.x = startingX;
@@ -200,12 +214,14 @@ class grassSpell {
   }
 
   implant() {
+    // ensures that the spell's x and y coordinates on the grid are displayed by the spell type
     if (this.exists) {
       field[this.x][this.y] = "g";
     }
   }
 
   move() {
+    // moves the spell
     if (millis() - this.counter >= this.speed && this.exists) {
       if (this.direction === "up") {
         field[this.x][this.y] = ".";
@@ -252,10 +268,13 @@ class grassSpell {
   }
 
   checkForCollision() {
+    // checks for collision with players or other spells
     if (this.exists) {
       if (this.owner === "p") {
         if (this.x === playerTwoX && this.y === playerTwoY) {
           playerTwoRemainingHealth -= 5;
+          hitSound.setVolume(0.1);
+          hitSound.play();
           this.exists = false;
         }
         else if (field[this.x][this.y] === "f") {
@@ -266,6 +285,8 @@ class grassSpell {
       else if (this.owner === "o") {
         if (this.x === playerOneX && this.y === playerOneY) {
           playerOneRemainingHealth -= 5;
+          hitSound.setVolume(0.1);
+          hitSound.play();
           this.exists = false;
         }
         else if (field[this.x][this.y] === "f") {
@@ -279,34 +300,8 @@ class grassSpell {
 
 
 
-// class button {
-//   constructor(x, y, buttonHeight, color, text) {
-//     // the x and y is in the center of the button
-//     this.x = x - buttonHeight * 1.5 / 2;
-//     this.y = y - buttonHeight / 2;
-//     this.textX = x;
-//     this.textY = y;
-//     this.height = buttonHeight;
-//     this.width = buttonHeight * 1.5;
-//     this.color = color;
-//     this.text = text;
-//   }
-
-//   display() {
-//     fill(this.color);
-//     rect(this.x, this.y, this.width, this.height);
-//     textSize(this.width / 5);
-//     fill(0);
-//     text(this.text, this.textX, this.textY);
-//   }
-
-//   clicked(menuToSwitchTo) {
-//     gameState = menuToSwitchTo;
-//   }
-// }
-
-
 class healthbar {
+  // healthbar class for both players
   constructor(x, y, maxHealth, remainingHealth, owner) {
     this.maxHealth = maxHealth;
     this.remainingHealth = remainingHealth;
@@ -316,6 +311,7 @@ class healthbar {
   }
 
   display(remainingHealth) {
+    // displays the remaining health, with appropirate colour and text
     this.remainingHealth = remainingHealth;
     fill(255);
     rect(this.x, this.y, this.maxHealth * (windowSize / 120), windowSize / 40);

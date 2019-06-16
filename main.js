@@ -5,7 +5,7 @@ function draw() {
 
 
 function pickingGameState() {
-  // determines what draw functions should be called based on what the game state is
+  // determines what looping functions should be called based on what the game state is
   if (gameState === "mainMenu") {
     mainMenu();
   }
@@ -52,40 +52,45 @@ function keyTyped() {
       }
       gameSetup();
       gameState = "game";
+      selectSound.setVolume(1);
+      selectSound.play();
     }
   }
   else if (gameState === "game") {
+    // if in game and key is pressed, checks for player movement, spell casting, or game pausing
     playerMovement();
     castingSpells();
     if (key === "p") {
       gameState = "pauseMenu";
+      selectSound.setVolume(1);
+      selectSound.play();
     }
   }
   else if (gameState === "results") {
+    // checks if enter key is pressed, which continues
     if (keyCode === ENTER) {
+      selectSound.setVolume(1);
+      selectSound.play();
       setup();
     }
   }
   else if (gameState === "mainMenu") {
+    // checks if enter key is pressed, which is the only way to continue from the main menu
     if (keyCode === ENTER) {
       gameState = "mapSelect";
+      selectSound.setVolume(1);
+      selectSound.play();
     }
   }
   else if (gameState === "pauseMenu") {
+    // if game is paused, pressing p again unpauses
     if (key === "p") {
       gameState = "game";
+      selectSound.setVolume(1);
+      selectSound.play();
       cooldownTimerOne = millis();
       cooldownTimerTwo = millis();
     }
-  }
-}
-
-
-
-function mousePressed() {
-  // If the mouse is pressed at any point
-  if (gameState === "mainMenu") {
-  //   if (mouseX > )
   }
 }
 
@@ -105,9 +110,7 @@ function windowResized() {
 }
 
 function objects() {
-  // buttonObject = {
-  //   mainMenuButton: new button(windowSize/2, windowSize/2, windowSize / 10, "red", "PLAY")
-  // };
+  // continuously shows objects
   healthbarObject = {
     playerTwoHealthbar: new healthbar(windowSize - playerTwoMaxHealth * (windowSize / 120), 0, playerTwoMaxHealth, playerTwoRemainingHealth, 1),
     playerOneHealthbar: new healthbar(0, windowSize - (windowSize / 40), playerOneMaxHealth, playerOneRemainingHealth, 2),

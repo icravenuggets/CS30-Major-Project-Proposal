@@ -1,5 +1,5 @@
 function mapSelect() {
-  // The main menu that shows up when you first start the page
+  // The map selection menu that allows you to pick a battlefield
   background(255);
   fill(0);
   textSize(windowSize / 20);
@@ -8,6 +8,7 @@ function mapSelect() {
   
 
 function mainMenu() {
+  // The main menu function that automatically opens when you start the page
   fill(0);
   textSize(windowSize/7);
   text("Wizard Game", windowSize / 2, windowSize / 4);
@@ -18,6 +19,7 @@ function mainMenu() {
 
 
 function pauseMenu() {
+  // Activated when you press the "p" key in game, it pauses the game and shows game instructions
   background(255);
   fill(0);
   textSize(windowSize/20);
@@ -31,6 +33,7 @@ function pauseMenu() {
 }
 
 function results() {
+  // The gameState that shows the winner after the game ends
   background(255);
   textAlign(CENTER, CENTER);
   if (gameWinner === 1) {

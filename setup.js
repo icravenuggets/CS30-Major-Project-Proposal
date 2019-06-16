@@ -6,6 +6,7 @@ let cooldownTimerTwo = 0;
 let field, spells, buttons;
 let buttonObject, healthbarObject;
 let playerOneMaxHealth, playerTwoMaxHealth, playerOneRemainingHealth, playerTwoRemainingHealth, gameWinner, tempTimerOne;
+let backgroundSoundOn = false;
 
 
 
@@ -24,8 +25,14 @@ function preload() {
   playerTwoDown = loadImage("assets/playerTwoDown.png");
   playerTwoRight = loadImage("assets/playerTwoRight.png");
   playerTwoLeft = loadImage("assets/playerTwoLeft.png");
-  wall = loadImage("assets/wall.png");
-  floor = loadImage("assets/floor.png");
+  wall = loadImage("assets/rock.png");
+  floor = loadImage("assets/dirt.png");
+  castSound = loadSound("assets/sounds/cast.wav");
+  backgroundMusic = loadSound("assets/sounds/background.wav");
+  winSound = loadSound("assets/sounds/coin.wav");
+  selectSound = loadSound("assets/sounds/pop.wav");
+  hitSound = loadSound("assets/sounds/hit.wav");
+  walkSound = loadSound("assets/sounds/tap.wav");
 }
 
 function setup() {
@@ -36,6 +43,12 @@ function setup() {
   field = [];
   spells = [];
   buttons = [];
+  // Looping background music
+  if (backgroundSoundOn === false) {
+    backgroundSoundOn = true;
+    backgroundMusic.setVolume(0.2);
+    backgroundMusic.loop();
+  }
 }
 
 function gameSetup() {

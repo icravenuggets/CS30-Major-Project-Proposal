@@ -18,25 +18,18 @@
 
 - Scoreboard
 
-- Nice looking cursor, start screen, and menus
+- Nice looking start screen, and menus
 
 -$ Pause Menu
 
+-$ Instructions menu
+
 - Options menu
 
-- Good quality sound
+-$ Sound Effects
 
 - Remembers your data when you log on
 
 - Upgrade system using currency
 
 - Player vs CPU modes
-
-
-## Stuff to Do
-
-- Visuals
-
-- Sound
-
-- Comments
