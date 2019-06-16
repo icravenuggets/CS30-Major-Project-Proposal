@@ -33,6 +33,7 @@ function preload() {
   selectSound = loadSound("assets/sounds/pop.wav");
   hitSound = loadSound("assets/sounds/hit.wav");
   walkSound = loadSound("assets/sounds/tap.wav");
+  font = loadFont("assets/font.otf");
 }
 
 function setup() {
@@ -43,6 +44,7 @@ function setup() {
   field = [];
   spells = [];
   buttons = [];
+  textFont(font);
   // Looping background music
   if (backgroundSoundOn === false) {
     backgroundSoundOn = true;
