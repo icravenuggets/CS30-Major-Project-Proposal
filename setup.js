@@ -4,7 +4,7 @@ let counter, fireSpellSpeed, waterSpellSpeed, grassSpellSpeed, mapState, windowS
 let cooldownTimerOne = 0;
 let cooldownTimerTwo = 0;
 let field, spells, buttons;
-let buttonObject, healthbarObject;
+let buttonObject, healthbarObject, floorSize;
 let playerOneMaxHealth, playerTwoMaxHealth, playerOneRemainingHealth, playerTwoRemainingHealth, gameWinner, tempTimerOne;
 let backgroundSoundOn = false;
 
@@ -44,6 +44,7 @@ function setup() {
   field = [];
   spells = [];
   buttons = [];
+  noCursor();
   textFont(font);
   // Looping background music
   if (backgroundSoundOn === false) {

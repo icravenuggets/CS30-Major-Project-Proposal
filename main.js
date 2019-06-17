@@ -105,7 +105,7 @@ function windowResized() {
     windowSize = windowHeight;
   }
   createCanvas(windowSize, windowSize);
-  tileSize = windowSize / 20;
+  tileSize = Math.floor(windowSize / 20);
   objects();
 }
 

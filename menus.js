@@ -1,11 +1,11 @@
 function mapSelect() {
   // The map selection menu that allows you to pick a battlefield
-  for (let i = 0; i < windowSize / 20; i++) {
-    for (let j = 0; j < windowSize / 20; j ++) {
-      image(floor, i * windowSize / 20, j * windowSize / 20, tileSize, tileSize);
+  for (let i = 0; i < tileSize; i++) {
+    for (let j = 0; j < tileSize; j ++) {
+      image(floor, i * tileSize, j * tileSize, tileSize, tileSize);
     }
   }
-  fill(0);
+  fill(255);
   textSize(windowSize / 30);
   text("Press a number 1 to 5 to pick a map", windowSize / 2, windowSize / 3);
 }
@@ -13,11 +13,12 @@ function mapSelect() {
 
 function mainMenu() {
   // The main menu function that automatically opens when you start the page
-  for (let i = 0; i < windowSize / 20; i++) {
-    for (let j = 0; j < windowSize / 20; j ++) {
-      image(floor, i * windowSize / 20, j * windowSize / 20, tileSize, tileSize);
+  for (let i = 0; i < tileSize; i++) {
+    for (let j = 0; j < tileSize; j ++) {
+      image(floor, i * tileSize, j * tileSize, tileSize, tileSize);
     }
   }
+  fill(255);
   textSize(windowSize/12);
   text("Wizard Game", windowSize / 2, windowSize / 4);
   textSize(windowSize/40);
@@ -30,12 +31,12 @@ function mainMenu() {
 
 function pauseMenu() {
   // Activated when you press the "p" key in game, it pauses the game and shows game instructions
-  for (let i = 0; i < windowSize / 20; i++) {
-    for (let j = 0; j < windowSize / 20; j ++) {
-      image(floor, i * windowSize / 20, j * windowSize / 20, tileSize, tileSize);
+  for (let i = 0; i < tileSize; i++) {
+    for (let j = 0; j < tileSize; j ++) {
+      image(floor, i * tileSize, j * tileSize, tileSize, tileSize);
     }
   }
-  fill(0);
+  fill(255);
   textSize(windowSize/30);
   textAlign(CENTER, CENTER);
   text("The game is paused, press p to unpause", windowSize/2, windowSize/2);
@@ -48,11 +49,12 @@ function pauseMenu() {
 
 function results() {
   // The gameState that shows the winner after the game ends
-  for (let i = 0; i < windowSize / 20; i++) {
-    for (let j = 0; j < windowSize / 20; j ++) {
-      image(floor, i * windowSize / 20, j * windowSize / 20, tileSize, tileSize);
+  for (let i = 0; i < tileSize; i++) {
+    for (let j = 0; j < tileSize; j ++) {
+      image(floor, i * tileSize, j * tileSize, tileSize, tileSize);
     }
   }
+  fill(255);
   textAlign(CENTER, CENTER);
   if (gameWinner === 1) {
     textSize(windowSize/40);
